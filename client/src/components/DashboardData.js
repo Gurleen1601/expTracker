@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux';
 import { fetchAccountStatsAction } from "../redux/slices/accountStats/accountStatSlices";
 import ErrorDisplayMessage from "./ErrorDisplayMessage";
-// import { App } from "./GraphData";
 import GraphData  from "./GraphData";
 import LoadingComponent from "./Loading";
 
