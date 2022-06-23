@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux';
 import { fetchAccountStatsAction } from "../redux/slices/accountStats/accountStatSlices";
 import ErrorDisplayMessage from "./ErrorDisplayMessage";
-import GraphData from "./GraphData";
+// import { App } from "./GraphData";
+import GraphData  from "./GraphData";
 import LoadingComponent from "./Loading";
+
 
 const DashboardData = () => {
   const dispatch=useDispatch();
@@ -17,7 +19,8 @@ console.log(accountDetails?.expenseStats[0]);
     <section class="py-6">
       <div class="container">
         {/* Grpah */}
-        <GraphData income={30} expense={20}/>
+       <GraphData income={accountDetails?.incomeStats[0]?.totalIncome}
+              expense={accountDetails?.expenseStats[0]?.totalExp}/>
         <div
           style={{
             display: "flex",
