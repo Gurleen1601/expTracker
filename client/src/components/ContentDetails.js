@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate , useLocation } from "react-router-dom";
+import currencyFormatter from "../utils/currencyFormatter";
 import dateFormatter from "../utils/dateFormatter";
 
 const ContentDetails = ({ item }) => {
@@ -17,7 +18,7 @@ const ContentDetails = ({ item }) => {
 
         <td className="p-6">{item?.title}</td>
         <td className="p-6">{item?.description}</td>
-        <td className="p-6">{item?.amount}</td>
+        <td className="p-6">{currencyFormatter("USD",item?.amount)}</td>
         <td className="p-6">{item?.createdAt && dateFormatter(item?.createdAt)}</td>
         <td className="p-6"> 
           <button
